@@ -14,7 +14,7 @@ body {
 }
 
 .flex-row {
-	flex-direction: row;
+	flex-direction: row !important;
 }
 
 .justify-content-center {
@@ -42,9 +42,9 @@ body {
 }
 
 .adjustment {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
 }
 
 .white-text {
@@ -56,7 +56,7 @@ body {
 }
 
 .height-90-vh {
-	height: 90vh;
+	height: 130vh;
 }
 
 .height-auto {
@@ -106,7 +106,7 @@ body {
 }
 
 .data {
-	width: 91vw;
+	width: 130vw;
 	padding-top: 2vh;
 	padding: 10px 10px 10px 10px;
 }
