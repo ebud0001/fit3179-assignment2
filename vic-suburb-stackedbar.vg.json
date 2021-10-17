@@ -9,24 +9,28 @@
               "bind": {
                   "input": "select",
                   "options": ["CLAYTON","SOUTH YARRA","CAULFIELD NORTH","CAULFIELD EAST","OAKLEIGH","BOX HILL"],
-                  "name": "Select Locality:"}}],
-  "mark": "bar",
-  "transform": [{"filter": "datum.SUBURB == Locality_selection"}],
-  "encoding": {
-    "x": {"field": "PERIOD",
-    "type": "ordinal",
-    "axis": {"labelAngle":0, "title": "Period"},
-    "scale": {"domain": ["Q3 2019", "Q4 2019","Q1 2020","Q2 2020", "Q3 2020"]}
+                  "name": "Select Locality:"}},
+                {
+                  "name": "brush",
+                  "select": {"type": "point", "on": "mouseover"}}],                  
+  "layer":[
+    {"mark": "rect",
+    "transform": [{"filter": "datum.SUBURB == Locality_selection"}, {"filter": {"param": "brush"}}],
+    "encoding": {
+      "x": {"field": "PERIOD",
+      "type": "ordinal",
+      "axis": {"labelAngle":0, "title": "Period"},
+      "scale": {"domain": ["Q3 2019", "Q4 2019","Q1 2020","Q2 2020", "Q3 2020"]}
     },
-    "y": {"field": "PRICE", "type":"quantitative", "aggregate":"average",
-    "axis": {
-      "title": "Median House Prices (in AUD)"
+      "y": {"field": "PRICE", "type":"quantitative", "aggregate":"average",
+      "axis": {
+        "title": "Median House Prices (in AUD)"
     }},
-    "fill":{"value": "#008080"},
-    "tooltip": [
+      "color":{"condition": {"param": "brush"},"value": "#008080"},
+      "tooltip": [
                   {"field": "SUBURB","type": "nominal", "title": "Suburb"},
                   {"field": "PRICE", "type": "quantitative", "title": "Median Price", "format": ","},
                   {"field": "PERIOD", "type": "ordinal", "title": "Quarter Period"}
-                  ]
+                  ]}}]
+  
   }
-}
