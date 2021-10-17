@@ -15,7 +15,7 @@
   "encoding": {
     "x": {"field": "PERIOD",
     "type": "ordinal",
-    "axis": {"labelAngle":0},
+    "axis": {"labelAngle":0, "title": "Period"},
     "scale": {"domain": ["Q3 2019", "Q4 2019","Q1 2020","Q2 2020", "Q3 2020"]}
     },
     "y": {"field": "PRICE", "type":"quantitative", "aggregate":"average",
