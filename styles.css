@@ -89,7 +89,7 @@ body {
 }
 
 .menu {
-	width: 7vw;
+	width: 9vw;
 	background-color: #459eab !important;
 	padding-top: 2vh;
 	height: auto;
@@ -106,7 +106,7 @@ body {
 }
 
 .data {
-	width: 93vw;
+	width: 91vw;
 	padding-top: 2vh;
 	padding: 10px 10px 10px 10px;
 }
