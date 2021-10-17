@@ -32,7 +32,6 @@
         }
       ],
       "encoding": {
-        "size": {"field": "SUBURB", "type": "nominal","legend": null},
         "x": {"field": {"repeat": "column"}, "type": "quantitative"},
         "y": {
           "field": {"repeat": "row"},
@@ -43,7 +42,8 @@
           "condition": {
             "param": "brush",
             "field": "SUBURB",
-            "type": "nominal"
+            "type": "nominal",
+            "legend": null
           },
           "value": "grey"
         },
