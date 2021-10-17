@@ -42,7 +42,7 @@
     "layer": [
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/ebud0001/fit3179-assignment2/main/data/vic_suburbs.json",
+                "url": "https://raw.githubusercontent.com/ebud0001/fit3179-assignment2/main/vic_suburbs.json",
                 "format": {"type": "topojson", "feature": "vic_suburbs"}
             },
             "transform": [{
@@ -57,13 +57,13 @@
         ,
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/ebud0001/fit3179-assignment2/main/data/VIC_House_Medians3rdQtr2020.csv"
+                "url": "https://raw.githubusercontent.com/ebud0001/fit3179-assignment2/main/VIC_House_Medians3rdQtr2020.csv"
             },
             "transform": [{
                 "lookup": "SUBURB",
                 "from": {
                     "data": {
-                        "url": "https://raw.githubusercontent.com/ebud0001/fit3179-assignment2/main/data/vic_suburbs.json",
+                        "url": "https://raw.githubusercontent.com/ebud0001/fit3179-assignment2/main/vic_suburbs.json",
                         "format": {"type": "topojson", "feature": "vic_suburbs"}
                     },
                     "key": "properties.vic_loca_2"                },

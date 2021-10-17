@@ -3,7 +3,7 @@
   "title": "Median House Prices in selected localities",
   "width": 400,
   "height": 400,
-  "data": {"url": "https://raw.githubusercontent.com/ebud0001/fit3179-assignment2/main/data/VIC_House_Medians3rdQtr2020.csv"},
+  "data": {"url": "https://raw.githubusercontent.com/ebud0001/fit3179-assignment2/main/VIC_House_Medians3rdQtr2020.csv"},
   "params": [{"name": "Locality_selection",
               "value": "CLAYTON",
               "bind": {

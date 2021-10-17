@@ -1,13 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title":"Relationship between Median House Price Changes",
-    "data": {"url": "https://raw.githubusercontent.com/ebud0001/fit3179-assignment2/main/data/VIC_Change_House_Price.csv"},
+    "data": {"url": "https://raw.githubusercontent.com/ebud0001/fit3179-assignment2/main/VIC_Change_House_Price.csv"},
     "repeat": {
       "row": ["Change_Q4_2019", "Change_Q1_2020", "Change_Q2_2020","Change_Q3_2020"],
       "column": ["Change_Q4_2019", "Change_Q1_2020", "Change_Q2_2020","Change_Q3_2020"]
     },
     "spec": {
-      "data": {"url": "https://raw.githubusercontent.com/ebud0001/fit3179-assignment2/main/data/VIC_Change_House_Price.csv"},
+      "data": {"url": "https://raw.githubusercontent.com/ebud0001/fit3179-assignment2/main/VIC_Change_House_Price.csv"},
       "mark": "point",
       "params": [
         {
