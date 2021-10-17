@@ -1,7 +1,7 @@
-const specVis1 = "/json/vic-suburb-map.vg.json";
-const specVis2 = "/json/vic-suburb-scatterplot.vg.json";
-const specVis3 = "/json/vic-suburb-stackedbar.vg.json";
-const specVis4 = "/json/vic-rent-byregion.vg.json";
+const specVis1 = "vic-suburb-map.vg.json";
+const specVis2 = "vic-suburb-scatterplot.vg.json";
+const specVis3 = "vic-suburb-stackedbar.vg.json";
+const specVis4 = "vic-rent-byregion.vg.json";
 
 const caption1 =
 	"The highest median property price across all quarters is in Toorak. It can also be seen that property prices tend to be higher in its surrounding areas.";
