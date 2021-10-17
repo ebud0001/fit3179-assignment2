@@ -1,0 +1,91 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Median House Prices in Victoria from Q3 2019 to Q3 2020",
+    "width": 800,
+    "height": 600,
+    "params": [{"name": "Period_selection",
+                "value": "Q3 2020",
+                "bind": {
+                    "input": "select",
+                    "options": [
+                    "Q3 2019",
+                    "Q4 2019",
+                    "Q1 2020",
+                    "Q2 2020",
+                    "Q3 2020"],
+                    "labels": ["Q3 2019", "Q4 2019", "Q1 2020", "Q2 2020","Q3 2020"],
+                    "name": "Select Period: "}},
+                {"name": "zoom_level",
+                "value": 30000,
+                "bind": {
+                    "input": "range",
+                    "min": 3500,
+                    "max": 60000,
+                    "step": 1000,
+                    "name": "Zoom: "
+                    }},
+                    {"name": "center_to",
+                        "value": [145, -37.95],
+                        "bind": {
+                            "input": "select",
+                            "options":  [
+                                [145, -37.95],
+                                [144.3, -38.1],
+                                [144.9, -36.7],
+                                [147.1, -38.1]
+                                ],
+                            "labels": ["Melbourne CBD", "Geelong", "Bendigo", "Sale"],
+                            "name": "Map Center: "
+                            }}
+                ],
+    "projection": {"type": "equirectangular", "center": {"expr": "center_to"}, "scale": {"expr": "zoom_level"}},
+    "layer": [
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/ebud0001/FIT3179-Week-10-Homework/main/vic_suburbs.json",
+                "format": {"type": "topojson", "feature": "vic_suburbs"}
+            },
+            "transform": [{
+                "calculate": "'Data is not available in ' + datum.properties.NAME",
+                "as": "note"
+                }],
+                "mark": {"type": "geoshape", "fill": "#E5E5E5", "stroke": "white"},
+            "encoding": {
+                "tooltip": {"field": "note"}
+                }
+            } 
+        ,
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/ebud0001/fit3179-assignment-2/main/data/VIC_House_Medians3rdQtr2020.csv"
+            },
+            "transform": [{
+                "lookup": "SUBURB",
+                "from": {
+                    "data": {
+                        "url": "https://raw.githubusercontent.com/ebud0001/fit3179-assignment-2/main/data/vic_suburbs.json",
+                        "format": {"type": "topojson", "feature": "vic_suburbs"}
+                    },
+                    "key": "properties.vic_loca_2"                },
+                "as": "geo"
+            },
+        {"filter": "datum.PERIOD == Period_selection"}],
+            "mark":  {"type": "geoshape"},
+            "encoding": {
+                "shape": {"field": "geo", "type": "geojson"},
+                "color": {
+                    "field": "PRICE",
+                    "type": "quantitative",
+                    "scale": {"scheme": "tealblues"},
+                    "legend": {"format": ".2s"}
+                },
+                "tooltip": [
+                    {"field": "SUBURB","type": "nominal", "title": "Suburb"},
+                    {"field": "PRICE", "type": "quantitative", "title": "Median Price", "format": ","},
+                    {"field": "PERIOD", "type": "ordinal", "title": "Quarter Period"}
+                    ]
+            } 
+        }
+    ],
+    "config": {}
+}

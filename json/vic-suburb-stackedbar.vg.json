@@ -1,0 +1,35 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Median House Prices in selected localities",
+  "width": 400,
+  "height": 400,
+  "data": {"url": "https://raw.githubusercontent.com/ebud0001/fit3179-assignment-2/main/data/VIC_House_Medians3rdQtr2020.csv"},
+  "params": [{"name": "Locality_selection",
+              "value": "CLAYTON",
+              "bind": {
+                  "input": "select",
+                  "options": ["CLAYTON","SOUTH YARRA","CAULFIELD NORTH","CAULFIELD EAST","OAKLEIGH","BOX HILL"],
+                  "name": "Select Locality:"}}],
+  "mark": "bar",
+  "transform": [{"filter": "datum.SUBURB == Locality_selection"}],
+  "encoding": {
+    "x": {"field": "PERIOD",
+    "type": "ordinal",
+    "scale": {"domain": ["Q3 2019", "Q4 2019","Q1 2020","Q2 2020", "Q3 2020"]}
+    },
+    "y": {"field": "PRICE", "type":"quantitative", "aggregate":"average",
+    "axis": {
+      "title": "Median House Prices (in AUD)"
+    }},
+    "color":{
+                  "field": "PRICE",
+                  "type": "quantitative",
+                  "scale": {"scheme": "tealblues"}
+              },
+    "tooltip": [
+                  {"field": "SUBURB","type": "nominal", "title": "Suburb"},
+                  {"field": "PRICE", "type": "quantitative", "title": "Median Price", "format": ","},
+                  {"field": "PERIOD", "type": "ordinal", "title": "Quarter Period"}
+                  ]
+  }
+}
