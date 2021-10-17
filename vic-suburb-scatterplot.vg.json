@@ -32,7 +32,7 @@
         }
       ],
       "encoding": {
-        "size": {"legend": null},
+        "size": {"field": "SUBURB", "type": "nominal","legend": null},
         "x": {"field": {"repeat": "column"}, "type": "quantitative"},
         "y": {
           "field": {"repeat": "row"},
