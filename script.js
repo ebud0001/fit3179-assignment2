@@ -44,7 +44,9 @@ option1.addEventListener("click", () => {
 	source.classList.add("caption");
 	caption.innerHTML = caption1;
 	source.innerHTML = source1;
-	vegaEmbed("#graph", specVis1);
+	vegaEmbed("#graph", specVis1, {"actions": false}).then(function(result){
+		// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+	  }).catch(console.error);
 });
 
 option2.addEventListener("click", () => {
@@ -56,7 +58,9 @@ option2.addEventListener("click", () => {
 	source.classList.add("caption");
 	caption.innerHTML = caption2;
 	source.innerHTML = source2;
-	vegaEmbed("#graph", specVis2);
+	vegaEmbed("#graph", specVis2, {"actions": false}).then(function(result){
+		// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+	  }).catch(console.error);
 });
 
 option3.addEventListener("click", () => {
@@ -68,7 +72,9 @@ option3.addEventListener("click", () => {
 	source.classList.add("caption");
 	caption.innerHTML = caption3;
 	source.innerHTML = source3;
-	vegaEmbed("#graph", specVis3);
+	vegaEmbed("#graph", specVis3, {"actions": false}).then(function(result){
+		// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+	  }).catch(console.error);
 });
 
 option4.addEventListener("click", () => {
@@ -80,5 +86,7 @@ option4.addEventListener("click", () => {
 	source.classList.add("caption");
 	caption.innerHTML = caption4;
 	source.innerHTML = source4;
-	vegaEmbed("#graph", specVis4);
+	vegaEmbed("#graph", specVis4, {"actions": false}).then(function(result){
+		// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+	  }).catch(console.error);
 });
